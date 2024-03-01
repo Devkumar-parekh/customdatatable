@@ -1,5 +1,5 @@
 {
-  "name": "customdatatable",
+  "name": "customdatatabledev",
   "version": "1.0.0",
   "type": "module",
   "description": "",
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/pointingRickyTest/npmtestpack"
   },
   "keywords": [
-    "customdatatable",
+    "customdatatabledev",
     "datatable",
     "bootstrapdatatable"
   ],

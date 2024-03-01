@@ -5,7 +5,7 @@ export default defineConfig({
   output: {
     dir: "dist",
     format: "es",
-    name: "customdatatable",
+    name: "customdatatabledev",
   },
   external: ["react", "react-dom"],
   plugins: [typescript({ tsconfig: "tsconfig.json" })],

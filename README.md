@@ -1,4 +1,4 @@
-# customdatatable
+# customdatatabledev
 
 ## Description
 
@@ -9,7 +9,7 @@ Custom Datatable is a versatile React component that provides powerful functiona
 You can install the package via npm:
 
 ```bash
-npm i customdatatable
+npm i customdatatabledev
 
 ```
 
