@@ -241,9 +241,12 @@ const CustomDatatable = ({
       return [
         ...prev.sort((a, b) => {
           const compareValue = isDate
-            ? (new Date(a[sortBy]) as any) - (new Date(b[sortBy]) as any)
-            : (a[sortBy] as any) - (b[sortBy] as any);
-
+            ? (new Date(a[sortBy]) as any) < (new Date(b[sortBy]) as any)
+              ? -1
+              : 1
+            : (a[sortBy] as any) < (b[sortBy] as any)
+            ? -1
+            : 1;
           return compareValue;
         }),
       ];
@@ -254,9 +257,12 @@ const CustomDatatable = ({
     setBodyState((prev) => [
       ...prev.sort((a, b) => {
         const compareValue = isDate
-          ? (new Date(b[sortBy]) as any) - (new Date(a[sortBy]) as any)
-          : (b[sortBy] as any) - (a[sortBy] as any);
-
+          ? (new Date(a[sortBy]) as any) > (new Date(b[sortBy]) as any)
+            ? -1
+            : 1
+          : (a[sortBy] as any) > (b[sortBy] as any)
+          ? -1
+          : 1;
         return compareValue;
       }),
     ]);
