@@ -1,5 +1,6 @@
 import { defineConfig } from "rollup";
 import typescript from "@rollup/plugin-typescript";
+import postcss from "rollup-plugin-postcss";
 export default defineConfig({
   input: "src/index.ts",
   output: {
@@ -7,6 +8,17 @@ export default defineConfig({
     format: "es",
     name: "customdatatabledev",
   },
-  external: ["react", "react-dom"],
-  plugins: [typescript({ tsconfig: "tsconfig.json" })],
+  external: [
+    "react",
+    "react-dom",
+    "bootstrap",
+    "bootstrap/dist/css/bootstrap.min.css",
+  ],
+  plugins: [
+    typescript({ tsconfig: "tsconfig.json" }),
+    postcss({
+      extract: true,
+      minimize: true,
+    }),
+  ],
 });

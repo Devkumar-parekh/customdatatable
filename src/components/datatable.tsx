@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import * as React from "react";
 import { ReactNode } from "react";
 
@@ -7,7 +7,7 @@ import { ReactNode } from "react";
 // import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect, useMemo, useRef } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 export type PropsType = {
   Pagination: "false" | "true";
   TableBody: any[]; // Change 'any' to the actual type of your TableBody items
