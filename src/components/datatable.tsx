@@ -37,9 +37,9 @@ const CustomDatatable = ({
   isResponsive = true,
 }: PropsType) => {
   id = new Date().getTime().toString();
-  useEffect(() => {
-    require("bootstrap/dist/js/bootstrap.bundle.min.js");
-  }, []);
+  // useEffect(() => {
+  //   require("bootstrap/dist/js/bootstrap.bundle.min.js");
+  // }, []);
 
   // const [RecordPerPage, setRecordPerPage] = useState<number | string>(recordPerPageProp);
   const [RecordPerPage, setRecordPerPage] = useState<number | string>(

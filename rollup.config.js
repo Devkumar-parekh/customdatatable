@@ -13,6 +13,7 @@ export default defineConfig({
     "react-dom",
     "bootstrap",
     "bootstrap/dist/css/bootstrap.min.css",
+    "bootstrap/dist/js/bootstrap.bundle.min.js",
   ],
   plugins: [
     typescript({ tsconfig: "tsconfig.json" }),
