@@ -8,13 +8,7 @@ export default defineConfig({
     format: "es",
     name: "customdatatabledev",
   },
-  external: [
-    "react",
-    "react-dom",
-    "bootstrap",
-    "bootstrap/dist/css/bootstrap.min.css",
-    "bootstrap/dist/js/bootstrap.bundle.min.js",
-  ],
+  external: ["react", "react-dom"],
   plugins: [
     typescript({ tsconfig: "tsconfig.json" }),
     postcss({

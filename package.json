@@ -24,7 +24,6 @@
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/node": "^20.11.24",
     "@types/react": "^18.2.60",
-    "bootstrap": "^5.3.3",
     "postcss": "^8.4.35",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
