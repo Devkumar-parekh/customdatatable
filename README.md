@@ -32,12 +32,15 @@ Usage
     classes: '',
     recordPerPageProp: 50,
     id: '1',
-    useref: null, // Add your actual useref value
+    useref: null,
     printOption: true,
     pdfOption: false,
     isResponsive: true,
     TableBody: tableBody,
     TableHead: storeDataHead,
+    tableClasses: 'table-dark table-hover table-striped',//you can do the changes as needed these are bootstrap classes
+    theadClasses: 'table-primary',//you can do the changes as needed these are bootstrap classes
+    tbodyClasses: 'table-success',//you can do the changes as needed these are bootstrap classes
   };
 
 ```
@@ -68,12 +71,74 @@ useref: Ref object - Reference to the datatable.<br/>
 printOption: Boolean - Enable or disable printing option.<br/>
 pdfOption: Boolean - Enable or disable exporting to PDF.<br/>
 isResponsive: Boolean - Enable or disable responsive design.<br/>
+tableClasses: you can do the changes as needed these are bootstrap classes<br/>
+theadClasses: you can do the changes as needed these are bootstrap classes<br/>
+tbodyClasses: you can do the changes as needed these are bootstrap classes<br/>
 
 ## TableHead
 
+```bash
 const TableHead = [
 { prop: 'key1', title: 'Title1' },
 { prop: 'key2', title: 'Title2' },
 { prop: 'key3', title: 'Title3' },
 ...
 ]
+```
+
+## Special Case
+
+When you want to add some kind of inputs fields, call to actions,etc. you can do it like this.<br/>
+
+```bash
+const TableHead = [
+{ prop: 'key1', title: 'Title1' },
+{
+      prop: 'customCell',
+      title: 'Description',
+      cell: (row: any): JSX.Element | null => {
+        return (
+          <>
+            <span
+              className="d-inline-block text-truncate"
+              style={{ maxWidth: '300px' }}
+            >
+              {row?.storeDesc}
+            </span>
+          </>
+        );
+      },
+    },
+...
+]
+```
+
+Here row will return complete object for that particular row.
+For example:
+tablebody -->
+
+```bash
+[{
+  key1:value11,
+  key2:value21,
+  key3:value31,
+},{
+  key1:value12,
+  key2:value22,
+  key3:value32,
+},{
+  key1:value13,
+  key2:value23,
+  key3:value33,
+}]
+```
+
+possible values for 1st row will be:
+
+```bash
+{
+  key1:value11,
+  key2:value21,
+  key3:value31,
+}
+```

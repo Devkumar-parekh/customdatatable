@@ -20,6 +20,9 @@ export type PropsType = {
   printOption: boolean;
   pdfOption: boolean;
   isResponsive: boolean;
+  tableClasses: string;
+  theadClasses: string;
+  tbodyClasses: string;
 };
 
 const CustomDatatable = ({
@@ -35,6 +38,9 @@ const CustomDatatable = ({
   printOption = true,
   pdfOption = false,
   isResponsive = true,
+  tableClasses = "",
+  theadClasses = "",
+  tbodyClasses = "",
 }: PropsType) => {
   id = new Date().getTime().toString();
   // useEffect(() => {
@@ -375,13 +381,12 @@ const CustomDatatable = ({
           }}
         >
           <table
-            // className={`table ${classes}`}
-            className={`table-bordered tableToPrint table`}
+            className={`table-bordered tableToPrint table ${tableClasses}`}
             id={`${id}_table`}
             ref={useref}
           >
             <thead
-              className="bg-primary text-light"
+              className={`bg-primary text-light ${theadClasses}`}
               style={{
                 position: "sticky",
                 top: 0,
@@ -404,7 +409,7 @@ const CustomDatatable = ({
               </tr>
             </thead>
 
-            <tbody>
+            <tbody className={`${tbodyClasses}`}>
               {(Pagination === "false" || RecordPerPage === "all"
                 ? BodyState
                 : BodyState?.slice(
