@@ -1,6 +1,6 @@
 {
   "name": "customdatatabledev",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "type": "module",
   "description": "",
   "main": "dist/index.js",
@@ -15,7 +15,11 @@
   "keywords": [
     "customdatatabledev",
     "datatable",
-    "bootstrapdatatable"
+    "bootstrapdatatable",
+    "customdatatable",
+    "table",
+    "customtable",
+    "reacttable"
   ],
   "author": "",
   "license": "ISC",

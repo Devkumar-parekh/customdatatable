@@ -23,6 +23,7 @@ export type PropsType = {
   tableClasses: string;
   theadClasses: string;
   tbodyClasses: string;
+  onscroll: () => {};
 };
 
 const CustomDatatable = ({
@@ -41,6 +42,7 @@ const CustomDatatable = ({
   tableClasses = "",
   theadClasses = "",
   tbodyClasses = "",
+  onscroll,
 }: PropsType) => {
   id = new Date().getTime().toString();
   // useEffect(() => {
@@ -322,7 +324,7 @@ const CustomDatatable = ({
             {Pagination === "true" && (
               <div className="col">
                 <div className=" " style={{ width: "max-content" }}>
-                  Post Per Page:
+                  {/* Post Per Page: */}
                   <span>
                     <select
                       className="form-select"
@@ -376,9 +378,10 @@ const CustomDatatable = ({
             isResponsive ? "table-responsive isResponsive" : "not Responsive"
           }
           style={{
-            maxHeight: printOption ? "90vh" : "",
+            maxHeight: printOption || isResponsive ? "90vh" : "",
             overflow: isResponsive ? "auto" : "",
           }}
+          onScroll={() => onscroll}
         >
           <table
             className={`table-bordered tableToPrint table ${tableClasses}`}
