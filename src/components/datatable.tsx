@@ -23,7 +23,7 @@ export type PropsType = {
   tableClasses: string;
   theadClasses: string;
   tbodyClasses: string;
-  onscroll: () => {};
+  onscroll: Function;
 };
 
 const CustomDatatable = ({
@@ -381,7 +381,9 @@ const CustomDatatable = ({
             maxHeight: printOption || isResponsive ? "90vh" : "",
             overflow: isResponsive ? "auto" : "",
           }}
-          onScroll={() => onscroll}
+          onScroll={(e) => {
+            onscroll(e);
+          }}
         >
           <table
             className={`table-bordered tableToPrint table ${tableClasses}`}
