@@ -77,6 +77,7 @@ const CustomDatatable = ({
       prop: string;
       isDate: boolean;
       title: string;
+      issortable: boolean;
     };
   }
   const [sortedBy, setSortedBy] = useState<boolean>(false);
@@ -99,53 +100,55 @@ const CustomDatatable = ({
           >
             {rel.title}
           </span>
-          <div className="d-flex flex-column sort-btn ms-1">
-            <div
-              className="caret-up"
-              onClick={() => {
-                type SortParams = [string, boolean];
-                const sortParams: SortParams = rel.isDate
-                  ? [rel.prop, true]
-                  : [rel.prop, false];
-                const sortFunction = sortedBy ? updateSortBy : updateUnSortBy;
-                sortFunction(...sortParams);
-                setSortedBy(false);
-              }}
-              style={{
-                width: 0,
-                height: 0,
-                borderLeft: "5px solid transparent",
-                borderRight: "5px solid transparent",
-                borderBottom: `8px solid ${"black"}` /* Change color as needed */,
-                cursor: "pointer",
-                display: "inline-block",
-                margin: "2px",
-              }}
-            ></div>
+          {rel?.issortable && (
+            <div className="d-flex flex-column sort-btn ms-1">
+              <div
+                className="caret-up"
+                onClick={() => {
+                  type SortParams = [string, boolean];
+                  const sortParams: SortParams = rel.isDate
+                    ? [rel.prop, true]
+                    : [rel.prop, false];
+                  const sortFunction = sortedBy ? updateSortBy : updateUnSortBy;
+                  sortFunction(...sortParams);
+                  setSortedBy(false);
+                }}
+                style={{
+                  width: 0,
+                  height: 0,
+                  borderLeft: "5px solid transparent",
+                  borderRight: "5px solid transparent",
+                  borderBottom: `8px solid ${"black"}` /* Change color as needed */,
+                  cursor: "pointer",
+                  display: "inline-block",
+                  margin: "2px",
+                }}
+              ></div>
 
-            <div
-              className="caret-down"
-              style={{
-                width: 0,
-                height: 0,
-                borderLeft: "5px solid transparent",
-                borderRight: "5px solid transparent",
-                borderTop: `8px solid ${"black"}` /* Change color as needed */,
-                cursor: "pointer",
-                display: "inline-block",
-                margin: "2px",
-              }}
-              onClick={() => {
-                type SortParams = [string, boolean];
-                const sortParams: SortParams = rel.isDate
-                  ? [rel.prop, true]
-                  : [rel.prop, false];
-                const sortFunction = sortedBy ? updateSortBy : updateUnSortBy;
-                sortFunction(...sortParams);
-                setSortedBy(true);
-              }}
-            ></div>
-          </div>
+              <div
+                className="caret-down"
+                style={{
+                  width: 0,
+                  height: 0,
+                  borderLeft: "5px solid transparent",
+                  borderRight: "5px solid transparent",
+                  borderTop: `8px solid ${"black"}` /* Change color as needed */,
+                  cursor: "pointer",
+                  display: "inline-block",
+                  margin: "2px",
+                }}
+                onClick={() => {
+                  type SortParams = [string, boolean];
+                  const sortParams: SortParams = rel.isDate
+                    ? [rel.prop, true]
+                    : [rel.prop, false];
+                  const sortFunction = sortedBy ? updateSortBy : updateUnSortBy;
+                  sortFunction(...sortParams);
+                  setSortedBy(true);
+                }}
+              ></div>
+            </div>
+          )}
         </div>
       </>
     );
