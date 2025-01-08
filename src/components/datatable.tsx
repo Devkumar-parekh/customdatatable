@@ -378,7 +378,7 @@ const CustomDatatable = ({
             isResponsive ? "table-responsive isResponsive" : "not Responsive"
           }
           style={{
-            maxHeight: printOption || isResponsive ? "90vh" : "",
+            maxHeight: printOption || isResponsive ? "70vh" : "",
             overflow: isResponsive ? "auto" : "",
           }}
           onScroll={(e) => {
